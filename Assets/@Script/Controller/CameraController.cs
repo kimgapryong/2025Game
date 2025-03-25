@@ -14,7 +14,7 @@ public class CameraController : BaseController
     {
         base.Init();
         player = Manager.Player;
-        speed = 15f;
+        speed = 25f;
         return true;
     }
     public override void UpdateMethod()

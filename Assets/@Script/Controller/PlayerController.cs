@@ -8,6 +8,9 @@ public class PlayerController : CreatureController
 {
     private string beforeAnimName;
     public Action clickAction;
+
+    public Transform weaponHole;
+    public Transform itemHole;
     public override bool Init()
     {
         base.Init();
@@ -16,8 +19,8 @@ public class PlayerController : CreatureController
     }
     public override void UpdateMethod()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
 
         dir = new Vector3(x, y, 0);
 
@@ -34,6 +37,10 @@ public class PlayerController : CreatureController
                 return;
 
             plaItemEvent?.Invoke();
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            clickAction?.Invoke();
         }
     }
 

@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class UiManager
 {
-    public List<SlotFragment> fragments = new List<SlotFragment>();
+    public List<SlotFragment> slotFragments = new List<SlotFragment>();
+    public List<BagSlotFragment> bagSlotFragment = new List<BagSlotFragment>();
+    public InvenCanvas Inventory { get; set; }
+    public ShopCanvas Shop { get; set; }
+    public BagCanvas Bag { get; set; }
+   
     public T CreateUi<T>(string path, Transform trans = null) where T : Component
     {
         GameObject ui = Manager.Resources.Instantaite($"UI/{path}", trans);

@@ -10,7 +10,6 @@ public class CreatureController : BaseController
 
     //플레이어 아이템 and 무기 이벤트
     public Action plaItemEvent;
-    public Action bagItemEvent;
 
     public CreatureData data;
 

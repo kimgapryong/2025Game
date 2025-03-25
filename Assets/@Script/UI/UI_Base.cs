@@ -47,4 +47,5 @@ public class UI_Base : MonoBehaviour
     protected Image GetImage(int key) { return Get<Image>(key); }
     protected GameObject GetObject(int key) { return Get<GameObject>(key); }
     protected Text GetText(int key) { return Get<Text>(key); }
+    protected Button GetButton(int key) { return Get<Button>(key); }
 }

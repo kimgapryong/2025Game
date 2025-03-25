@@ -16,7 +16,8 @@ public class Manager : MonoBehaviour
     private ItemManager _item = new ItemManager();
     public static ItemManager Item { get { return Instance._item; } }
 
-
+    private GameManager _game = new GameManager();
+    public static GameManager Game { get { return Instance._game; } }
     public static PlayerController Player { get; set; }
 
     private void Awake()

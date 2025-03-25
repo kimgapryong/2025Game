@@ -6,6 +6,6 @@ public class Shop_Click : Click_Base
 {
     public override void ClickAction()
     {
-        //상점 열기
+      Manager.Ui.Shop.gameObject.SetActive(true);
     }
 }

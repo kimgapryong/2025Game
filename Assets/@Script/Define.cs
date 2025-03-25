@@ -23,4 +23,14 @@ public class Define
         Stage,
         End,
     }
+    public enum WeaponType
+    {
+        Sword,
+        Bag,
+        Breath,
+        FlashLight,
+        Gun1,
+        Gun2,
+        Gun3,
+    }
 }

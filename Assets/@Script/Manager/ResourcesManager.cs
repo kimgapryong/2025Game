@@ -16,6 +16,7 @@ public class ResourcesManager
     }
     public GameObject Instantaite(string path, Transform trans = null)
     {
+        
         GameObject obj = Load<GameObject>(path);
         GameObject clone = Object.Instantiate(obj);
         clone.transform.parent = trans;

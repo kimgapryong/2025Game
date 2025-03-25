@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 public static class Utils
@@ -31,5 +29,11 @@ public static class Utils
         }
 
         return null;
+    }
+
+    public static void BindingBtn(this GameObject obj, Action action)
+    {
+        ButtonEvent btnEvn = obj.AddComponent<ButtonEvent>();
+        btnEvn.btnAction = action;
     }
 }

@@ -7,6 +7,8 @@ public class ItemData : ScriptableObject
 {
     public string ItemManaterName;
     public string ItemName;
+    public float Damange;
+    public float Weight;
     public float Money;
     public Sprite Image;
 }

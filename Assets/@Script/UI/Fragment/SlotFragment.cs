@@ -24,22 +24,39 @@ public class SlotFragment : UI_Base, IPointerClickHandler
         slotImage.gameObject.SetActive(false);
 
         itemImage = GetImage((int)Images.Sprite_Image);
+        itemImage.gameObject.SetActive(false);
         return true;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public virtual void OnPointerClick(PointerEventData eventData)
     {
         //전부다 초기화
-        foreach(var slot in Manager.Ui.fragments)
+        foreach(var slot in Manager.Ui.slotFragments)
             slot.SetBgFalse();
 
         slotImage.gameObject.SetActive(true);
-        if(myItem != null)
-            Manager.Player.plaItemEvent = myItem.ItemAbility;
+        if (myItem == null)
+        {
+            Manager.Player.plaItemEvent = null;
+            return;
+        }
+            
+        Manager.Player.plaItemEvent = myItem.ItemAbility;
     }
 
     public void SetBgFalse()
     {
         slotImage.gameObject.SetActive(false);
+    }
+
+    //아이템 이미지 설정
+    public void SetItemImage(Sprite image)
+    {
+        itemImage.sprite = image;
+        itemImage.gameObject.SetActive(true);
+    }
+    public void DelItemImage()
+    {
+        itemImage.gameObject.SetActive(false );
     }
 }
