@@ -32,7 +32,12 @@ public class SlotFragment : UI_Base, IPointerClickHandler
     {
         //전부다 초기화
         foreach(var slot in Manager.Ui.slotFragments)
+        {
             slot.SetBgFalse();
+            if(slot.myItem != null)
+                slot.myItem.gameObject.SetActive(false);
+        }
+            
 
         slotImage.gameObject.SetActive(true);
         if (myItem == null)
@@ -40,7 +45,8 @@ public class SlotFragment : UI_Base, IPointerClickHandler
             Manager.Player.plaItemEvent = null;
             return;
         }
-            
+
+        myItem.gameObject.SetActive(true);
         Manager.Player.plaItemEvent = myItem.ItemAbility;
     }
 

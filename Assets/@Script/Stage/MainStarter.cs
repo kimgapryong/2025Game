@@ -19,6 +19,7 @@ public class MainStarter : Base_Stage
             playerCon.itemHole = pla.transform.Find("ItemHole");
             DontDestroyOnLoad(pla);
         }
+        Manager.Player.transform.position = StartPos;
         //墨皋扼 积己
         if(Camera.main == null)
         {
@@ -51,6 +52,22 @@ public class MainStarter : Base_Stage
 
         //啊规 积己
         Manager.Ui.Inventory.ReBack();
+
+        //固聪甘 积己
+        if(Manager.Ui.MiniMap == null)
+        {
+            MiniMapCanvas mini = Manager.Ui.CreateUi<MiniMapCanvas>("MiniMapCanvas");
+            Manager.Ui.MiniMap = mini;
+            DontDestroyOnLoad(mini.gameObject);
+        }
+
+        //盖酒贰 积己 TextCanvas
+        if(Manager.Ui.AllTxt == null)
+        {
+            AllTxtCanvas allTxt = Manager.Ui.CreateUi<AllTxtCanvas>("AllTxtCanvas");
+            Manager.Ui.AllTxt = allTxt;
+            DontDestroyOnLoad(allTxt.gameObject);
+        }
 
         return true;
     }

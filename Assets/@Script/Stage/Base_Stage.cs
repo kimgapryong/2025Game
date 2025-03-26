@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Base_Stage : MonoBehaviour
 {
+    public int myStageID;
     public Define.SceneType sceneType;
     public Vector3 StartPos;
     public bool isFirst;
@@ -17,6 +18,7 @@ public class Base_Stage : MonoBehaviour
         if(!isFirst)
         {
             isFirst = true;
+            Manager.Stage.CurStageID = myStageID;
             return true;
         }
 

@@ -12,7 +12,6 @@ public class MonsterController : CreatureController
     {
         base.Init();
         player = Manager.Player;
-        Debug.Log(speed);
         rigid = GetComponent<Rigidbody2D>();
         return true;
     }
@@ -28,7 +27,11 @@ public class MonsterController : CreatureController
         if (Vector3.Distance(transform.position, player.transform.position) <= data.AtkArange)
             state = Define.States.Attack;
         else if (Vector3.Distance(transform.position, player.transform.position) > data.MoveArange)
+        {
+            rigid.velocity = Vector3.zero;
             state = Define.States.Idle;
+        }
+            
         else
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
@@ -65,11 +68,23 @@ public class MonsterController : CreatureController
         ReBack();
     }
 
+    protected override void OnDie()
+    {
+        Manager.Player.GetComponent<RandomSpwanController>().SpwanRandomItem(transform.position);
+        Destroy(gameObject);
+    }
+
     public override IEnumerator WaitAtkTime()
     {
         isCool = true;
         yield return new WaitForSeconds(waitCool);
         isCool = false;
         rigid.velocity = Vector3.zero;
+    }
+
+    public override void UpdateMethod()
+    {
+        if(!player.isHide)
+            base.UpdateMethod();
     }
 }

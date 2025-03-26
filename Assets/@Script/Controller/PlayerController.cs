@@ -9,12 +9,26 @@ public class PlayerController : CreatureController
     private string beforeAnimName;
     public Action clickAction;
 
+    private Rigidbody2D rigid;
     public Transform weaponHole;
     public Transform itemHole;
+
+    public Coroutine breathCor;
+    public Coroutine damageCor;
+    public Coroutine speedCor;
+    public Coroutine hideCor;
+    public Coroutine godCor;
+
+    public bool isGod;
+    public bool isHide;
+    
     public override bool Init()
     {
         base.Init();
         state = Define.States.Move;
+        rigid = GetComponent<Rigidbody2D>();
+        Manager.Game.MaxBreath = 100;
+        Manager.Game.Breath = Manager.Game.MaxBreath;
         return true;
     }
     public override void UpdateMethod()
@@ -24,8 +38,12 @@ public class PlayerController : CreatureController
 
         dir = new Vector3(x, y, 0);
 
-        if(dir == Vector3.zero )
+        if(dir == Vector3.zero)
+        {
             state = Define.States.Idle;
+            rigid.velocity = Vector3.zero;
+        }
+            
         else
             state = Define.States.Move;
         
@@ -74,8 +92,38 @@ public class PlayerController : CreatureController
     }
     protected override void Move()
     {
-        transform.position += dir * speed * Time.deltaTime;
+       rigid.velocity = dir * speed;
     }
 
+    public override void OnDamage(CreatureController attker, float damage)
+    {
+        MonsterController monster = attker.GetComponent<MonsterController>();
+        if(isGod || isCool) 
+            return;
+
+        if(monster != null)
+        {
+            switch (monster.atkType)
+            {
+                case Define.AtkType.Hp:
+                    currentHP -= damage;
+                    break;
+
+                case Define.AtkType.Breath:
+                    Manager.Game.Breath -= damage;
+                    break;
+            }
+        }
+        else
+        {
+            currentHP -= damage;
+        }
+       
+      
+        if (currentHP <= 0 || Manager.Game.Breath <= 0)
+            OnDie();
+
+        StartCoroutine(WaitAtkTime());
+    }
 
 }

@@ -23,7 +23,9 @@ public class BagCanvas : UI_Base
         for(int i = 0; i < Manager.Game.BagCount; i++)
         {
             Manager.Ui.bagSlotFragment.Add(Manager.Ui.CreateUi<BagSlotFragment>("Fragment/BagSlot_Fragment",GetObject((int)Objects.Bag_Content).transform));
+            Debug.Log(Manager.Ui.bagSlotFragment[i]);
         }
+        Debug.Log(Manager.Ui.bagSlotFragment.Count);
 
         gameObject.SetActive(false);
         return true;

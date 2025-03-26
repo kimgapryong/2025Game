@@ -14,10 +14,16 @@ public class InvenCanvas : UI_Base
         Bag_Slider,
         Bag_Click
     }
+    enum Texts
+    {
+        Hp_Txt,
+        Br_Txt,
+    }
     public override bool Init()
     {
         base.Init();
         Bind<Image>(typeof(Images));
+        Bind<Text>(typeof(Texts));
 
         GetImage((int)Images.Bag_Click).gameObject.BindingBtn(() =>
         {
@@ -26,6 +32,9 @@ public class InvenCanvas : UI_Base
             else
                 Manager.Ui.Bag.gameObject.SetActive(true);
         });
+
+        Manager.Player.hpAction = ChangeHp;
+        Manager.Game.breathAction = ChangeBr;
 
         for(int i = 0; i < SLOT_COUNT; i++)
         {
@@ -36,10 +45,28 @@ public class InvenCanvas : UI_Base
 
     public void ReBack()
     {
+        
         if (Manager.Ui.Bag != null)
+        {
+            Manager.Ui.bagSlotFragment.Clear();
             Destroy(Manager.Ui.Bag.gameObject);
+
+        }
         BagCanvas bag = Manager.Ui.CreateUi<BagCanvas>("BagCanvas");
         Manager.Ui.Bag = bag;
         DontDestroyOnLoad(bag.gameObject);
+    }
+
+    public void ChangeHp(float cur, float max)
+    {
+        float hp = Mathf.Max(cur, 0);
+        GetText((int)Texts.Hp_Txt).text = $"{hp}/{max}";
+        GetImage((int)Images.Hp_Slider).fillAmount = hp / max;
+    }
+    public void ChangeBr(float cur, float max)
+    {
+        float br = Mathf.Max(cur, 0);
+        GetText((int)Texts.Br_Txt).text = $"{br}/{max}";
+        GetImage((int)Images.Br_Slider).fillAmount = br / max;
     }
 }

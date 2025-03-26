@@ -9,7 +9,8 @@ public class UiManager
     public InvenCanvas Inventory { get; set; }
     public ShopCanvas Shop { get; set; }
     public BagCanvas Bag { get; set; }
-   
+    public MiniMapCanvas MiniMap { get; set; }
+   public AllTxtCanvas AllTxt { get; set; }
     public T CreateUi<T>(string path, Transform trans = null) where T : Component
     {
         GameObject ui = Manager.Resources.Instantaite($"UI/{path}", trans);

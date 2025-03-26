@@ -16,10 +16,12 @@ public class BagSlotFragment : SlotFragment
         set
         {
             _item = value;
-            SetItemTxt(value);
+            if(_item > 0)
+                SetItemTxt(value);
         }
     }
-    public string itemName = null;
+    private string itemName = null;
+    private string itemManagerName = null;  
    enum Texts
     {
         Item_Txt
@@ -35,7 +37,11 @@ public class BagSlotFragment : SlotFragment
     public override void OnPointerClick(PointerEventData eventData)
     {
         foreach(var slot in Manager.Ui.bagSlotFragment)
+        {
+            Debug.Log(slot);
             slot.SetBgFalse();
+        }
+            
 
         slotImage.gameObject.SetActive(true);
 
@@ -44,6 +50,10 @@ public class BagSlotFragment : SlotFragment
 
         itemCount--;
         myItem.ItemAbility();
+
+        if(itemCount <= 0)
+            BagDicClear();
+            //bagµñ¼Å³Ê¸® clear
     }
 
     public void SetItemTxt(int num)
@@ -54,5 +64,20 @@ public class BagSlotFragment : SlotFragment
             GetText((int)Texts.Item_Txt).gameObject.SetActive(false);
         }
         GetText((int)Texts.Item_Txt).text = $"{itemName}X{num}";
+    }
+
+    public void BagDicClear()
+    {
+        itemName = null;
+        itemManagerName = null ;
+        GetText((int)Texts.Item_Txt).gameObject.SetActive(false);
+        DelItemImage();
+
+        myItem = null;
+    }
+    public void SetStirng(string itemName, string itmeManagerName)
+    {
+        this.itemName = itemName;
+        this.itemManagerName = itmeManagerName;
     }
 }

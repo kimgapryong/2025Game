@@ -7,6 +7,7 @@ public abstract class Item_Base : MonoBehaviour
     public ItemData itemData;
     private bool isFrist;
     public bool isEquair { get; set; }
+    public PlayerController player;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public abstract class Item_Base : MonoBehaviour
         if(!isFrist)
         {
             isFrist = true;
+            player = Manager.Player;
             return true;
         }
 

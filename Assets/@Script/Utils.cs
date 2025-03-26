@@ -36,4 +36,11 @@ public static class Utils
         ButtonEvent btnEvn = obj.AddComponent<ButtonEvent>();
         btnEvn.btnAction = action;
     }
+
+    public static void GetPreatical(this GameObject obj, CreatureController attker, float damage, float speed, Vector3 dir)
+    {
+        Preatical pre = obj.AddComponent<Preatical>();
+        float rotate = obj.transform.rotation.z - 90f;
+        pre.SetInfo(attker, damage, dir, speed, rotate);
+    }
 }

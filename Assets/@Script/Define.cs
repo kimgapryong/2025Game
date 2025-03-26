@@ -32,5 +32,19 @@ public class Define
         Gun1,
         Gun2,
         Gun3,
+        MiniMap,
+    }
+    public enum Rating
+    {
+        Common,
+        Normal,
+        Legend,
+    }
+
+    public enum DonkStastes
+    {
+        Idle,
+        Attack,
+        Cool
     }
 }

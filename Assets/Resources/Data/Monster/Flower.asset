@@ -15,5 +15,5 @@ MonoBehaviour:
   Hp: 60
   Speed: 6
   Damage: 15
-  MoveArange: 30
+  MoveArange: 4
   AtkArange: 0.9

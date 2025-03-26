@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1928941891750733675}
   - component: {fileID: 4919502200757850396}
   - component: {fileID: 7405632500435411785}
+  - component: {fileID: -4917797460542445305}
+  - component: {fileID: 3693874304246001441}
   m_Layer: 0
   m_Name: Heat
   m_TagString: Untagged
@@ -101,9 +103,74 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 72a593265b5dd4847af347c926d1fbf8, type: 2}
   animator: {fileID: 0}
   coll: {fileID: 0}
+  maxHp: 0
+  speed: 0
+  damage: 0
   atkType: 0
   player: {fileID: 0}
   backFource: 20
+--- !u!50 &-4917797460542445305
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5712317100146958865}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 70
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!58 &3693874304246001441
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5712317100146958865}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.020028275, y: 0.52105874}
+  serializedVersion: 2
+  m_Radius: 0.5723367
 --- !u!1001 &4242800395316104651
 PrefabInstance:
   m_ObjectHideFlags: 0

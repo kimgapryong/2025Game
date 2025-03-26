@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1646960401398562673}
   - component: {fileID: 6605275961838007373}
   - component: {fileID: 3005080553717307224}
+  - component: {fileID: -4100509078175683487}
+  - component: {fileID: -3881816572317324637}
   m_Layer: 0
   m_Name: Char_Bat
   m_TagString: Untagged
@@ -101,9 +103,74 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 44dc771c1a2822445a2e3dd4a0e816d6, type: 2}
   animator: {fileID: 0}
   coll: {fileID: 0}
+  maxHp: 0
+  speed: 0
+  damage: 0
   atkType: 0
   player: {fileID: 0}
   backFource: 20
+--- !u!50 &-4100509078175683487
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3861653659004842511}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 70
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!58 &-3881816572317324637
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3861653659004842511}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.5594916}
+  serializedVersion: 2
+  m_Radius: 0.4350871
 --- !u!1001 &8494631984113755469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115,7 +182,7 @@ PrefabInstance:
     - target: {fileID: 1482142045149725588, guid: b828e5079144e014b9b8d30bbdcaf9af, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 1482142045149725588, guid: b828e5079144e014b9b8d30bbdcaf9af, type: 3}
       propertyPath: m_FillAmount
       value: 1

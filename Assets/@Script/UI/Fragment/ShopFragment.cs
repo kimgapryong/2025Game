@@ -34,7 +34,6 @@ public class ShopFragment : UI_Base
 
     public  void  StrInit()
     {
-        base.Init();
         Bind<Image>(typeof(Images));
         Bind<Text>(typeof(Texts));
         Bind<Button>(typeof(Buttons));
@@ -73,14 +72,14 @@ public class ShopFragment : UI_Base
     {
         if(upgradeCount + 1 >= datas.Length)
         {
-            //GetAllText
+            Manager.Ui.AllTxt.GetAllTxt("이미 최대로 강화하였습니다");
             return;
         }
 
         int nextCont = upgradeCount + 1;
         if(Manager.Game.Money < datas[nextCont].Money)
         {
-            //GetAllText
+            Manager.Ui.AllTxt.GetAllTxt("돈이 부족합니다");
             return ;
         }
 

@@ -45,7 +45,7 @@ public class CreatureController : BaseController
     protected float waitCool = 0.5f;
     protected bool isCool;
 
-    protected float maxHp;
+    public float maxHp;
 
     private float _curHp;
     public float currentHP
@@ -61,8 +61,8 @@ public class CreatureController : BaseController
         }
     }
 
-    protected float speed;
-    protected float damage;
+    public float speed;
+    public float damage;
 
     public override bool Init()
     {

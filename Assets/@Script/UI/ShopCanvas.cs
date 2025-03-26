@@ -34,6 +34,7 @@ public class ShopCanvas : UI_Base
         Bind<Button>(typeof(Buttons));
 
         GetButton((int)Buttons.CloseBtn).gameObject.BindingBtn(() => gameObject.SetActive(false));
+        Manager.Game.moneyAction = ChangeMoney;
 
         //»ý¼º
         for(int i = 0; i < itemDatas.Length; i++)
@@ -46,5 +47,10 @@ public class ShopCanvas : UI_Base
 
         gameObject.SetActive(false);
         return true;
+    }
+
+    public void ChangeMoney(float money)
+    {
+        GetText((int)Texts.MoneyTxt).text = ((int)money).ToString();
     }
 }
