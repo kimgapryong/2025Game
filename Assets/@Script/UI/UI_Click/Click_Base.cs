@@ -9,14 +9,14 @@ public abstract class Click_Base : UI_Base
     {
         ClickImage,
     }
-    Image curImage;
+    public Image clickImage;
     public PlayerController player;
 
     public override bool Init()
     {
         base.Init();
         Bind<Image>(typeof(Images));
-        curImage = GetImage((int)Images.ClickImage);
+        clickImage = GetImage((int)Images.ClickImage);
         player = Manager.Player;
         return true;
     }
@@ -25,12 +25,12 @@ public abstract class Click_Base : UI_Base
     {
         if(Vector3.Distance(transform.position, player.transform.position) <= 1.8f)
         {
-            curImage.gameObject.SetActive(true);
+            clickImage.gameObject.SetActive(true);
             player.clickAction = ClickAction;
         }
         else
         {
-            curImage.gameObject.SetActive(false);
+            clickImage.gameObject.SetActive(false);
             player.clickAction -= ClickAction;
         }
     }

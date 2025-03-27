@@ -820,9 +820,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4846583032180040971}
   - component: {fileID: 8889545667573910224}
-  - component: {fileID: 5035661243660916786}
   - component: {fileID: 2223787920288640981}
-  - component: {fileID: 3193077201130922792}
+  - component: {fileID: 2362746866377566276}
   m_Layer: 5
   m_Name: ShopCanvas
   m_TagString: Untagged
@@ -873,29 +872,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &5035661243660916786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7493822017741194095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!114 &2223787920288640981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,7 +889,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3193077201130922792
+--- !u!114 &2362746866377566276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -926,7 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDatas:
-  - weaponType: 3
+  - weaponType: 4
     itemDataArange:
     - {fileID: 11400000, guid: 023246b01a444fd4393253ece353ded7, type: 2}
     - {fileID: 11400000, guid: 376ed0bfa6e1e354fb001c83d89ffb59, type: 2}
@@ -937,20 +913,26 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 8c0190d2eb8fc2949a7c6474088d9459, type: 2}
     - {fileID: 11400000, guid: 36ea8055ecbe62c49a06623a4ac3d7a7, type: 2}
     - {fileID: 11400000, guid: f79cf6983bc58984a8a07c7f345cd611, type: 2}
-  - weaponType: 1
+  - weaponType: 2
     itemDataArange:
     - {fileID: 11400000, guid: 091b543bb59e4344db59937ad0178c60, type: 2}
     - {fileID: 11400000, guid: 998721301abb7a5458852ff8dbfdf59b, type: 2}
     - {fileID: 11400000, guid: 78e32d6ef777bc64093f25d69db6da34, type: 2}
     - {fileID: 11400000, guid: 36e2da8c1487e4b49920beb929a4ed5d, type: 2}
-  - weaponType: 2
+  - weaponType: 3
     itemDataArange:
     - {fileID: 11400000, guid: bf96182b5f85e7e4391e445603149517, type: 2}
     - {fileID: 11400000, guid: b92edf11e18f1d44392492f78b60843f, type: 2}
     - {fileID: 11400000, guid: 12dc96d3d7dad1141a09c04bc6b297e8, type: 2}
-  - weaponType: 7
+  - weaponType: 8
     itemDataArange:
     - {fileID: 11400000, guid: 5d5b20f74bd7fb54491fa1798b8b9826, type: 2}
+  - weaponType: 1
+    itemDataArange:
+    - {fileID: 11400000, guid: 5daa84759db384142bc3a2de5fc4ade5, type: 2}
+    - {fileID: 11400000, guid: 8c0190d2eb8fc2949a7c6474088d9459, type: 2}
+    - {fileID: 11400000, guid: 36ea8055ecbe62c49a06623a4ac3d7a7, type: 2}
+    - {fileID: 11400000, guid: f79cf6983bc58984a8a07c7f345cd611, type: 2}
 --- !u!1 &8740366623775421268
 GameObject:
   m_ObjectHideFlags: 0

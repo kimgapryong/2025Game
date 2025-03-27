@@ -24,7 +24,6 @@ public class DonkCotroller : CreatureController
     public override bool Init()
     {
         //DonkState = Define.DonkStastes.Idle;
-        Debug.Log("ag");
         animator = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
 

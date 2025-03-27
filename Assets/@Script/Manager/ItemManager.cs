@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ItemManager 
 {
-    public void LoadPlayerItem(string path, Transform trans)
+    public void LoadPlayerItem(string path, Transform trans, Define.WeaponType type)
     {
         GameObject item = Manager.Resources.Instantaite($"Item/PlaItem/{path}", trans);
         item.transform.localPosition = Vector3.zero;
@@ -14,8 +14,10 @@ public class ItemManager
         
         foreach(var slot in Manager.Ui.slotFragments)
         {
-            if(slot.myItem != null)
+            if(slot.myItem != null && slot.weaponType != type)
                 continue;
+            if(slot.myItem != null)
+                Object.Destroy(slot.myItem.gameObject);
 
             slot.myItem = itemCom;
             slot.SetItemImage(itemCom.itemData.Image);
@@ -38,7 +40,7 @@ public class ItemManager
         else
         {
             string itemName = data.ItemManaterName;
-            LoadPlayerItem(itemName, Manager.Player.weaponHole);
+            LoadPlayerItem(itemName, Manager.Player.weaponHole, type);
         }
     }
 

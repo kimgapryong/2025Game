@@ -7,7 +7,8 @@ public class MonsterController : CreatureController
     public Define.AtkType atkType;
     public PlayerController player;
     private Rigidbody2D rigid;
-    public float backFource = 20;
+    private float backFource = 40;
+    private bool isBack;
     public override bool Init()
     {
         base.Init();
@@ -17,7 +18,7 @@ public class MonsterController : CreatureController
     }
     protected override void Idle()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) <= data.MoveArange)
+        if (Vector3.Distance(transform.position, player.transform.position) <= data.MoveArange && !isBack)
             state = Define.States.Move;
     }
     protected override void Move()
@@ -25,11 +26,14 @@ public class MonsterController : CreatureController
         dir = (player.transform.position - transform.position).normalized;
 
         if (Vector3.Distance(transform.position, player.transform.position) <= data.AtkArange)
+        {
             state = Define.States.Attack;
+            return;
+        }
         else if (Vector3.Distance(transform.position, player.transform.position) > data.MoveArange)
         {
-            rigid.velocity = Vector3.zero;
             state = Define.States.Idle;
+            return;
         }
             
         else
@@ -62,11 +66,6 @@ public class MonsterController : CreatureController
             player.OnDamage(this, damage);
     }
 
-    public override void OnDamage(CreatureController attker, float damage)
-    {
-        base.OnDamage(attker, damage);
-        ReBack();
-    }
 
     protected override void OnDie()
     {
@@ -77,8 +76,10 @@ public class MonsterController : CreatureController
     public override IEnumerator WaitAtkTime()
     {
         isCool = true;
+        isBack = true;
         yield return new WaitForSeconds(waitCool);
         isCool = false;
+        isBack = false;
         rigid.velocity = Vector3.zero;
     }
 

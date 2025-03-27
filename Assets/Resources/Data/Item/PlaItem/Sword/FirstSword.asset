@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemManaterName: FirstSword
   ItemName: "\uAE30\uBCF8 \uAC80"
+  Damange: 20
+  Weight: 0
   Money: 0
-  Image: {fileID: -1041754904, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
+  Image: {fileID: 1169189359, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}

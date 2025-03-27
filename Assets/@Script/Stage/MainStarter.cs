@@ -20,8 +20,10 @@ public class MainStarter : Base_Stage
             DontDestroyOnLoad(pla);
         }
         Manager.Player.transform.position = StartPos;
+        Manager.Player.currentHP = Manager.Player.maxHp;
+        Manager.Game.Breath = Manager.Game.MaxBreath;
         //朝五虞 持失
-        if(Camera.main == null)
+        if (Camera.main == null)
         {
             GameObject cam = Manager.Resources.Instantaite("Main Camera");
             CameraController camCon = cam.GetOrAddComponent<CameraController>();

@@ -51,7 +51,7 @@ public class ShopFragment : UI_Base
             upgrades[i] = Manager.Resources.Instantaite("UI/Anather/UpgradeBarObj",GetObject((int)Objects.UpgradeBar).transform).GetComponent<Image>();
         }
 
-        if(waponType == Define.WeaponType.Bag || waponType == Define.WeaponType.FlashLight)
+        if(waponType == Define.WeaponType.Bag || waponType == Define.WeaponType.FlashLight || waponType == Define.WeaponType.Sword)
             BuyItem();
     }
 

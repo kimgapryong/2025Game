@@ -25,6 +25,7 @@ public class Define
     }
     public enum WeaponType
     {
+        None,
         Sword,
         Bag,
         Breath,
@@ -46,5 +47,10 @@ public class Define
         Idle,
         Attack,
         Cool
+    }
+    public enum SwordStates
+    {
+        Idle,
+        Attack,
     }
 }

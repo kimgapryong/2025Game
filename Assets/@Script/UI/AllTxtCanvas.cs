@@ -20,6 +20,8 @@ public class AllTxtCanvas : UI_Base
     }
     public void GetAllTxt(string text)
     {
+        gameObject.SetActive(true);
+
         if (_cor != null)
             StopCoroutine(WatiTxtCool());
 
@@ -28,7 +30,7 @@ public class AllTxtCanvas : UI_Base
     }
     private IEnumerator WatiTxtCool()
     {
-        gameObject.SetActive(true);
+        
         yield return new WaitForSeconds(2);
         gameObject.SetActive(false);
     }

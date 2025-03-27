@@ -111,6 +111,7 @@ public class CreatureController : BaseController
         if(currentHP<= 0)
             OnDie();
 
+        ReBack();
         StartCoroutine(WaitAtkTime());
     }
     protected virtual void OnDie()

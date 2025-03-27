@@ -31,6 +31,7 @@ public class BagSlotFragment : SlotFragment
     {
         base.Init();
         Bind<Text>(typeof(Texts));
+        GetText((int)Texts.Item_Txt).gameObject.SetActive(false);
         return true;
     }
 
@@ -48,6 +49,7 @@ public class BagSlotFragment : SlotFragment
         if(myItem == null || itemCount <= 0) 
             return;
 
+        Manager.Game.Weight -= myItem.itemData.Weight;
         itemCount--;
         myItem.ItemAbility();
 
@@ -63,6 +65,7 @@ public class BagSlotFragment : SlotFragment
             num = 0;
             GetText((int)Texts.Item_Txt).gameObject.SetActive(false);
         }
+        GetText((int)Texts.Item_Txt).gameObject.SetActive(true);
         GetText((int)Texts.Item_Txt).text = $"{itemName}X{num}";
     }
 

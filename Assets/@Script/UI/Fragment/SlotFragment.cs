@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SlotFragment : UI_Base, IPointerClickHandler
 {
     public Item_Base myItem;
-
+    public Define.WeaponType weaponType = Define.WeaponType.None;
     public Image slotImage;
     public Image itemImage;
     enum Images
@@ -34,8 +34,13 @@ public class SlotFragment : UI_Base, IPointerClickHandler
         foreach(var slot in Manager.Ui.slotFragments)
         {
             slot.SetBgFalse();
+            
             if(slot.myItem != null)
+            {
+                if (slot.myItem.GetType() == typeof(FlashLight))
+                    continue;
                 slot.myItem.gameObject.SetActive(false);
+            }
         }
             
 

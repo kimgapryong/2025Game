@@ -35,7 +35,7 @@ public class FireDonk : DonkCotroller
     private void OnTriggerEnter2D(Collider2D collision)
     {
        PlayerController player = collision.GetComponent<PlayerController>();
-        Debug.Log(fireDamage);
+        
         if (player != null)
             player.OnDamage(this, fireDamage);
     }

@@ -7,8 +7,6 @@ public class CameraController : BaseController
     PlayerController player;
     public float speed;
 
-    public float shakeForce;
-    public float shakeDuration;
     private Vector3 curPos;
     public override bool Init()
     {
@@ -23,20 +21,26 @@ public class CameraController : BaseController
         transform.position = new Vector3(transform.position.x, transform.position.y, -10);
     }
 
-    public IEnumerator ShakeCam()
+    public void StartShake(float force, float time)
     {
-        float curTime = 0;
-        curPos = transform.position;
-        while(curTime <= shakeDuration)
-        {
-            float randX = Random.Range(-1f,1f) * shakeForce;
-            float randY = Random.Range(-1f,1f) * shakeForce;
+        curPos = transform.localPosition;
+        StartCoroutine(ShakeCam(force, time));
+    }
 
-            transform.localPosition = curPos + new Vector3(randX, randY);
-            curTime += Time.deltaTime;
+    IEnumerator ShakeCam(float force, float time)
+    {
+        float eskape = 0f;
+        while (eskape < time)
+        {
+            float x = Random.Range(-1f, 1f) * force;
+            float y = Random.Range(-1f, 1f) * force;
+
+            transform.localPosition = curPos + new Vector3(x, y);
+            eskape += Time.deltaTime;
 
             yield return null;
         }
-        transform.position = curPos;
+
+        transform.localPosition = curPos;
     }
 }

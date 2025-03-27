@@ -11,7 +11,7 @@ public abstract class Item_Base : MonoBehaviour
 
     private void Start()
     {
-        isFrist = true;
+        Init();
     }
     public virtual bool Init()
     {

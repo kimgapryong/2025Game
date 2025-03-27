@@ -5,18 +5,6 @@ using UnityEngine.UI;
 
 public class Item_Click : Click_Base
 {
-    public Image clickImage;
-    enum Images
-    {
-        ClickImage,
-    }
-    public override bool Init()
-    {
-        base.Init();
-        Bind<Image>(typeof(Images));
-        clickImage = GetImage((int)Images.ClickImage);
-        return true;
-    }
 
     public override void ClickAction()
     {
@@ -27,13 +15,15 @@ public class Item_Click : Click_Base
             {
                 bag.myItem = item;
                 bag.SetStirng(item.itemData.ItemName, item.itemData.ItemManaterName);
-                bag.SetItemImage(item.GetComponent<Image>().sprite);
+                bag.SetItemImage(item.GetComponent<SpriteRenderer>().sprite);
                 bag.itemCount++;
+                Manager.Game.Weight += item.itemData.Weight;
                 break;
             }
             else if(bag.myItem.itemData.ItemManaterName == item.itemData.ItemManaterName) 
             {
                 bag.itemCount++;
+                Manager.Game.Weight += item.itemData.Weight;
                 break;
             }
         }
