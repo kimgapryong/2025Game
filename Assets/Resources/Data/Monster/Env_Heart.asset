@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f7374e85411af409e3f94c91cdead3, type: 3}
-  m_Name: MapItem
+  m_Script: {fileID: 11500000, guid: ed42b29e8b1553f4eb00e73496244715, type: 3}
+  m_Name: Env_Heart
   m_EditorClassIdentifier: 
-  ItemManaterName: MapItem
-  ItemName: "\uD0D0\uC0C9"
-  Damange: 0
-  Weight: 150
-  Money: 0
-  Image: {fileID: -6202940564662568092, guid: 937173201b1a9124082a9939b9bc0b5c, type: 3}
+  Hp: 5000
+  Speed: 1.4
+  Damage: 9000
+  MoveArange: 0
+  AtkArange: 0

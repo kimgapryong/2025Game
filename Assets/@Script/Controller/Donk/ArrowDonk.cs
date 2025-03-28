@@ -23,7 +23,7 @@ public class ArrowDonk : DonkCotroller
             obj.transform.position = transform.position;
             obj.name = arrow.name;
 
-            obj.GetPreatical(this, fireDamage, speed, myDir);
+            obj.GetPreatical(this, fireDamage, speed, myDir, transform);
             yield return new WaitForSeconds(waitTime);
         }
     }

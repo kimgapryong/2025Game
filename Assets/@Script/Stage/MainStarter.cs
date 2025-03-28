@@ -52,17 +52,27 @@ public class MainStarter : Base_Stage
             shoper.transform.position = new Vector3(9f, -8f, 0);
         }
 
-        //啊规 积己
-        Manager.Ui.Inventory.ReBack();
 
         //固聪甘 积己
-        if(Manager.Ui.MiniMap == null)
+        if (Manager.Ui.MiniMap == null)
         {
             MiniMapCanvas mini = Manager.Ui.CreateUi<MiniMapCanvas>("MiniMapCanvas");
             Manager.Ui.MiniMap = mini;
+
+            //啊规 积己
+            Manager.Ui.Inventory.ReBack();
             DontDestroyOnLoad(mini.gameObject);
         }
-
+        if(Manager.Ui.Adjustment == null)
+        {
+            AdjustmentCanvas adj = Manager.Ui.CreateUi<AdjustmentCanvas>("AdjustmentCanvas");
+            Manager.Ui.Adjustment = adj;
+            DontDestroyOnLoad(adj.gameObject);
+        }
+        else
+        {
+            StartCoroutine(Manager.Ui.Adjustment.CreateFragment());
+        }
         //盖酒贰 积己 TextCanvas
         if(Manager.Ui.AllTxt == null)
         {

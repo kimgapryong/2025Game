@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4002965532865038372}
   - component: {fileID: 1813926933268537503}
-  - component: {fileID: 3833219394227943056}
   - component: {fileID: 5484724498321791136}
   - component: {fileID: 1005987388971328530}
+  - component: {fileID: 939095620534926197}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -173,27 +173,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3833219394227943056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8884792743526178586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0d8394fd4547d408d105dd2739a49d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: ba092472681f9e149912931e1f892195, type: 2}
-  animator: {fileID: 0}
-  coll: {fileID: 0}
-  maxHp: 0
-  speed: 0
-  damage: 0
-  atkType: 1
-  player: {fileID: 0}
-  backFource: 20
 --- !u!50 &5484724498321791136
 Rigidbody2D:
   serializedVersion: 4
@@ -256,6 +235,28 @@ CapsuleCollider2D:
   m_Offset: {x: -0.012606701, y: 0.46715078}
   m_Size: {x: 0.7489337, y: 0.93430156}
   m_Direction: 0
+--- !u!114 &939095620534926197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8884792743526178586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c2f3ab154cc8344ab2234808908e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: ba092472681f9e149912931e1f892195, type: 2}
+  animator: {fileID: 0}
+  coll: {fileID: 0}
+  maxHp: 0
+  speed: 0
+  damage: 0
+  atkType: 1
+  player: {fileID: 0}
+  myDir: 0
+  distance: 7
 --- !u!1001 &1183897053766649096
 PrefabInstance:
   m_ObjectHideFlags: 0

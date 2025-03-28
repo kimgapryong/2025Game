@@ -37,10 +37,18 @@ public static class Utils
         btnEvn.btnAction = action;
     }
 
-    public static void GetPreatical(this GameObject obj, CreatureController attker, float damage, float speed, Vector3 dir)
+    public static void GetPreatical(this GameObject obj, CreatureController attker, float damage, float speed, Vector3 dir, Transform parent = null)
     {
         Preatical pre = obj.AddComponent<Preatical>();
-        float rotate = obj.transform.rotation.z - 90f;
+        float rotate = 0;
+        if(parent != null)
+            rotate = parent.eulerAngles.z - 90f;
+        
         pre.SetInfo(attker, damage, dir, speed, rotate);
+    }
+    public static void GetOnDisable(this GameObject obj, RandomMonsterController randMonsterCon)
+    {
+        OnDisable onDis = obj.AddComponent<OnDisable>();
+        onDis.randMonsterController = randMonsterCon;
     }
 }

@@ -36,6 +36,7 @@ public class ItemManager
         else if(type == Define.WeaponType.Breath)
         {
             Manager.Game.MaxBreath += data.Damange;
+            Manager.Game.Breath = Manager.Game.MaxBreath;
         }
         else
         {

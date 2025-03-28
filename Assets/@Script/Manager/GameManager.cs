@@ -10,6 +10,9 @@ public class GameManager
     public Action<float> moneyAction;
     public Action<float, float> weightAction;
     public Action<float, float> breathAction;
+
+    public static int curTrager = 0;
+
     private float _money;
     public float Money
     {

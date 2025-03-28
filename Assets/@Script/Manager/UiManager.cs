@@ -10,6 +10,7 @@ public class UiManager
     public ShopCanvas Shop { get; set; }
     public BagCanvas Bag { get; set; }
     public MiniMapCanvas MiniMap { get; set; }
+    public AdjustmentCanvas Adjustment { get; set; }
    public AllTxtCanvas AllTxt { get; set; }
     public T CreateUi<T>(string path, Transform trans = null) where T : Component
     {

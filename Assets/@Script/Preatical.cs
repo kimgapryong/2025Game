@@ -8,19 +8,19 @@ public class Preatical : MonoBehaviour
     public CreatureController attker;
     public Vector3 dir;
     public float speed;
-    public float rotateZ;
     
     public void SetInfo(CreatureController attker, float damage, Vector3 dir, float speed, float rotateZ)
     {
         this.attker = attker;
         this.dir = dir;
         this.speed = speed;
-        this.rotateZ = rotateZ;
         this.damage = damage;
+
+        gameObject.transform.eulerAngles = new Vector3(0f, 0f, rotateZ);
     }
     private void Start()
     {
-        gameObject.transform.eulerAngles = new Vector3(0f, 0f, rotateZ);
+       
         Destroy(gameObject, 2);
     }
     private void Update()

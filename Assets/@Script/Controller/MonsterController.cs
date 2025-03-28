@@ -6,8 +6,8 @@ public class MonsterController : CreatureController
 {
     public Define.AtkType atkType;
     public PlayerController player;
-    private Rigidbody2D rigid;
-    private float backFource = 40;
+    public Rigidbody2D rigid;
+    protected float backFource = 40;
     private bool isBack;
     public override bool Init()
     {

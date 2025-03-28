@@ -53,4 +53,10 @@ public class Define
         Idle,
         Attack,
     }
+    public enum FixedDir
+    {
+        Square,
+        LineUD,
+        LineLR,
+    }
 }

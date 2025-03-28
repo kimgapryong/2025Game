@@ -7,16 +7,22 @@ public class Stage : Base_Stage
     public float setSpeed;
     public float setTime;
     public GameObject onePiece;
+    public GameObject boss;
     public override bool Init()
     {
         base.Init();
         sceneType = Define.SceneType.Stage;
-        onePiece = GameObject.Find("OnePiece");
+        onePiece = GameObject.FindGameObjectWithTag("OnePiece");
+        boss = GameObject.FindGameObjectWithTag("Boss");
         Manager.Player.transform.position = StartPos;
-
+        Camera.main.gameObject.transform.position = StartPos;
         if (Manager.Stage.CheckStage(myStageID))
-            foreach(var door in GameObject.FindGameObjectsWithTag("Door"))
+        {
+            Destroy(boss);
+            foreach (var door in GameObject.FindGameObjectsWithTag("Door"))
                 Destroy(door);
+        }
+            
 
         if(Manager.Stage.CheckTrage(myStageID))
             Destroy(onePiece);

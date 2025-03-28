@@ -37,6 +37,7 @@ public class InvenCanvas : UI_Base
 
         Manager.Player.hpAction = ChangeHp;
         Manager.Game.breathAction = ChangeBr;
+        Manager.Game.weightAction = ChangeWeight;
 
         for(int i = 0; i < SLOT_COUNT; i++)
         {
@@ -47,17 +48,21 @@ public class InvenCanvas : UI_Base
 
     public void ReBack()
     {
-        
         if (Manager.Ui.Bag != null)
         {
             Manager.Ui.bagSlotFragment.Clear();
             Destroy(Manager.Ui.Bag.gameObject);
         }
+        foreach(var item in Manager.Player.itemHole.GetComponentsInChildren<Item_Base>())
+            Destroy(item.gameObject);
+
         BagCanvas bag = Manager.Ui.CreateUi<BagCanvas>("BagCanvas");
 
-        plaCurSpee = Manager.Player.speed;
+        plaCurSpee = Manager.Player.data.Speed;
         Manager.Game.Weight = 0;
         Manager.Ui.Bag = bag;
+
+        Debug.Log(Manager.Game.MaxWeight);
         DontDestroyOnLoad(bag.gameObject);
     }
 
