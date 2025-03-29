@@ -51,4 +51,9 @@ public static class Utils
         OnDisable onDis = obj.AddComponent<OnDisable>();
         onDis.randMonsterController = randMonsterCon;
     }
+    public static void GetTriggerEvnet(this GameObject obj, Action action)
+    {
+        TriggerEvent trigger = obj.AddComponent<TriggerEvent>();
+        trigger.triggerAction = action;
+    }
 }
