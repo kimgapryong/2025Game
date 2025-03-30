@@ -907,7 +907,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 023246b01a444fd4393253ece353ded7, type: 2}
     - {fileID: 11400000, guid: 376ed0bfa6e1e354fb001c83d89ffb59, type: 2}
     - {fileID: 11400000, guid: d3f0bc30cc10a1b4e80705d52b0f2cdd, type: 2}
-  - weaponType: 0
+  - weaponType: 1
     itemDataArange:
     - {fileID: 11400000, guid: 5daa84759db384142bc3a2de5fc4ade5, type: 2}
     - {fileID: 11400000, guid: 8c0190d2eb8fc2949a7c6474088d9459, type: 2}
@@ -927,12 +927,6 @@ MonoBehaviour:
   - weaponType: 8
     itemDataArange:
     - {fileID: 11400000, guid: 5d5b20f74bd7fb54491fa1798b8b9826, type: 2}
-  - weaponType: 1
-    itemDataArange:
-    - {fileID: 11400000, guid: 5daa84759db384142bc3a2de5fc4ade5, type: 2}
-    - {fileID: 11400000, guid: 8c0190d2eb8fc2949a7c6474088d9459, type: 2}
-    - {fileID: 11400000, guid: 36ea8055ecbe62c49a06623a4ac3d7a7, type: 2}
-    - {fileID: 11400000, guid: f79cf6983bc58984a8a07c7f345cd611, type: 2}
 --- !u!1 &8740366623775421268
 GameObject:
   m_ObjectHideFlags: 0

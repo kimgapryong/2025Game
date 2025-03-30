@@ -77,6 +77,10 @@ public class FixedMonsterController : MonsterController
             dir = myVec[curVecInt];
             nextPos = transform.position + dir * distance;
         }
+        else
+        {
+            player.OnDamage(this, damage);
+        }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -89,6 +93,10 @@ public class FixedMonsterController : MonsterController
             curVecInt++;
             dir = myVec[curVecInt];
             nextPos = transform.position + dir * distance;
+        }
+        else
+        {
+            player.OnDamage(this, damage);
         }
     }
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Env_Heart
   m_EditorClassIdentifier: 
   Hp: 5000
-  Speed: 1.4
+  Speed: 2.1
   Damage: 9000
   MoveArange: 0
   AtkArange: 0

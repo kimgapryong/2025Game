@@ -36,7 +36,7 @@ public class StageManager
     }
     public bool CheckTrage(int curId)
     {
-        if (Stages.trager[curId])
+        if (Stages.trager[curId - 1])
             return true;
 
         return false;

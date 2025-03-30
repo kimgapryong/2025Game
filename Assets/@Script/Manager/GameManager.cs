@@ -13,6 +13,8 @@ public class GameManager
 
     public static int curTrager = 0;
 
+    public int PlayerSocore { get; set; } = 1000;
+
     private float _money;
     public float Money
     {

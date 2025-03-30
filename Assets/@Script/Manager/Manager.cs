@@ -21,6 +21,9 @@ public class Manager : MonoBehaviour
 
     private StageManager _stage = new StageManager();
     public static StageManager Stage { get { return Instance._stage; } }
+
+    private RankingManager _ranking = new RankingManager();
+    public static RankingManager Ranking {  get { return Instance._ranking; } }
     public static PlayerController Player { get; set; }
 
     private void Awake()
@@ -45,6 +48,14 @@ public class Manager : MonoBehaviour
 
     public void Clear()
     {
-
+        Destroy(Camera.main.gameObject);
+        Destroy(Ui.Inventory.gameObject);
+        Destroy(Ui.Shop.gameObject);
+        Destroy(Ui.Bag.gameObject);
+        Destroy(Ui.MiniMap.gameObject);
+        Destroy(Ui.AllTxt.gameObject);
+        Destroy(Ui.Adjustment.gameObject);
+        Destroy(Player.gameObject);
+        
     }
 }

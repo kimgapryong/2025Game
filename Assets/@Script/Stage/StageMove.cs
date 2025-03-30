@@ -15,6 +15,7 @@ public class StageMove : MonoBehaviour
             if(nextStageId <= 6)
             {
                 //캐릭터 죽이기
+                Manager.Instance.Clear();
             }
             SceneManager.LoadScene($"Stage{nextStageId}");
         }

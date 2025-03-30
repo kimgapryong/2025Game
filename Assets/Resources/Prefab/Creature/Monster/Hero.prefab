@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4740128896697933422}
   - component: {fileID: 5197449227169265839}
   - component: {fileID: -4034966451968981507}
+  - component: {fileID: 5706310515604405101}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -108,7 +109,7 @@ MonoBehaviour:
   damage: 0
   atkType: 0
   player: {fileID: 0}
-  backFource: 20
+  rigid: {fileID: 0}
 --- !u!50 &-4034966451968981507
 Rigidbody2D:
   serializedVersion: 4
@@ -136,6 +137,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &5706310515604405101
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4517798574381571759}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.03174893, y: 0.53125}
+  m_Size: {x: 0.7301353, y: 1.0625}
+  m_Direction: 0
 --- !u!1 &5280206432942360361
 GameObject:
   m_ObjectHideFlags: 0

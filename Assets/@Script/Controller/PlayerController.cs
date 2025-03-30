@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : CreatureController
 {
@@ -59,6 +60,11 @@ public class PlayerController : CreatureController
         if (Input.GetKeyDown(KeyCode.E))
         {
             clickAction?.Invoke();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SceneManager.LoadScene("Stage5");
         }
     }
 
@@ -118,7 +124,8 @@ public class PlayerController : CreatureController
         {
             currentHP -= damage;
         }
-       
+
+        Manager.Game.PlayerSocore--;
       
         if (currentHP <= 0 || Manager.Game.Breath <= 0)
             OnDie();
